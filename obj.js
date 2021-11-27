@@ -52,3 +52,53 @@ class ProductNew {
 }
 const newProd1 = new ProductNew('chocolate', 620);
 const newProd2 = new ProductNew('cake', 213);
+
+//third 1.2
+//es5
+function Post(author, text) {
+	this.author = author;
+	this.text = text;
+	this.date = new Date().toLocaleString();
+}
+Post.prototype.edit = function (text) {
+	this.text = text;
+}
+const post = new Post('John', 'Hi Polat');
+
+//extended constructor
+function AttachedPost(author, text) {
+	Post.call(this, author, text);
+	this.highlighted = false;
+}
+
+AttachedPost.prototype = Object.create(Post.prototype);
+AttachedPost.prototype.constructor = AttachedPost;
+AttachedPost.prototype.makeTextHighlighted = function () {
+	this.highlighted = true;
+}
+const exPost = new AttachedPost('Polat', 'hello John');
+
+//es6
+class PostNew {
+	constructor(author, text) {
+		this.author = author;
+		this.text = text;
+		this.date = new Date().toLocaleString();
+	}
+	edit(text) {
+		this.text = text;
+	}
+}
+const postNew = new PostNew('Marina', 'Hi John');
+
+//extended class
+class AttachedPostNew extends PostNew {
+	constructor(author, text) {
+		super(author, text);
+		this.highlighted = false;
+	}
+	makeTextHighlighted() {
+		this.highlighted = true;
+	}
+}
+const exPostNew = new AttachedPostNew('John', 'How are you Marina');
