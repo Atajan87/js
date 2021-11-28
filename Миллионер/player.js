@@ -12,18 +12,5 @@ let getAnswer = {
             return false;
         }
     },
-    //getAnswer.answerUser();
-    checkAnswer(userAnswer) {
-        switch (userAnswer) {
-            case 1:
-                correctAnswers++;
-                console.log(correctAnswers);
-                break;
-            case 2, 3, 4:
-                wrongAnswers++;
-                console.log(wrongAnswers);
-                break;
-        }
-    }
 }
 
