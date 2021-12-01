@@ -1,7 +1,6 @@
 'use strict';
 //objects home-work
 
-
 //first 1
 
 /**
