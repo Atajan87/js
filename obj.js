@@ -100,4 +100,4 @@ class AttachedPostNew extends PostNew {
 		this.highlighted = true;
 	}
 }
-const exPostNew = new AttachedPostNew('John', 'How are you Marina');
+const exPostNew = new AttachedPostNew('John', 'How are you Marina!');
